@@ -11,12 +11,10 @@ import java.util.List;
 @AllArgsConstructor
 @RequestMapping("/list")
 public class FileListController {
+           private final FileService fileService;
 
-    private final FileService fileService;
-
-    @GetMapping
-    List<FileNameResponse> getAllFiles(@RequestHeader("auth-token")
-                                       String authToken, @RequestParam("limit") Integer limit) {
-        return fileService.getAllFiles(authToken, limit);
+        @GetMapping
+        List<FileNameResponse> getAllFiles(@RequestHeader("auth-token") String authToken, @RequestParam("limit") Integer limit) {
+            return fileService.getAllFiles(authToken, limit);
+        }
     }
-}

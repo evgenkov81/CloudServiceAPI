@@ -9,7 +9,7 @@ import ru.evgenkov.cloudserviceapi.exeptions.InputDataException;
 import ru.evgenkov.cloudserviceapi.exeptions.UnauthorizedException;
 
 @RestControllerAdvice
-public class ControllerExceptionHandler {
+public class ControllerAdvice {
 
     @ResponseStatus(value = HttpStatus.BAD_REQUEST)
     @ExceptionHandler(InputDataException.class)
@@ -28,4 +28,5 @@ public class ControllerExceptionHandler {
     public String HandlerFile (FileException ex) {
         return ex.getMessage();
     }
+
 }

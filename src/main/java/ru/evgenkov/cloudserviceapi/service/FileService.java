@@ -70,10 +70,10 @@ public class FileService {
     }
 
     private User getUser(String authToken) {
-        final String userName=authorizationRepository.getUserNameByToken(authToken);
-        return userRepository.findByLogin(userName);
+        final String username = authorizationRepository.getUserNameByToken(authToken);
+        return userRepository.findByLogin(username)
+                .orElseThrow(() -> new UnauthorizedException("Unauthorized error"));
     }
-
 
 
 }

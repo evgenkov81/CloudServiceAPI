@@ -1,8 +1,11 @@
 package ru.evgenkov.cloudserviceapi.repository;
 
+import org.springframework.stereotype.Repository;
+
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
+@Repository
 public class AuthorizationRepository {
 
     private final Map<String, String> tokenAndUserNames = new ConcurrentHashMap<>();
